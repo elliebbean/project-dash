@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="Project Dash"
-config/features=PackedStringArray("4.4", "Mobile")
+run/main_scene="uid://cwqnmiq2shng8"
+config/features=PackedStringArray("4.4", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -20,4 +27,5 @@ project/assembly_name="Project Dash"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
