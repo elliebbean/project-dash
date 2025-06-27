@@ -3,4 +3,5 @@
 /android/
 
 .vscode/
+FMOD/project_dash/.cache
 .vs
