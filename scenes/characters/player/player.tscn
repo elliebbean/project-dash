@@ -79,10 +79,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4flbx"]
-radius = 8.06226
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_686vu"]
+radius = 4.0
+height = 23.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_dovo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -90,6 +93,7 @@ sprite_frames = SubResource("SpriteFrames_onrkg")
 animation = &"down_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_4flbx")
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_686vu")
 
 [node name="Speed" parent="." instance=ExtResource("3_686vu")]
