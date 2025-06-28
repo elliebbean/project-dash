@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm7lj7pbcwgpb"]
+[gd_scene load_steps=7 format=3 uid="uid://dm7lj7pbcwgpb"]
 
 [ext_resource type="Texture2D" uid="uid://du42gxcrqmn7g" path="res://art/placeholder/placeholder.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b6ahut6ffcaf" path="res://scenes/characters/player/Player.cs" id="1_dovo2"]
 [ext_resource type="PackedScene" uid="uid://bcb3squi4rufo" path="res://scenes/characters/properties/speed/Speed.tscn" id="3_686vu"]
+[ext_resource type="PackedScene" uid="uid://cxjxgpi4dcqdm" path="res://scenes/attacks/dash/dash.tscn" id="4_hss88"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -29,3 +30,5 @@ shape = SubResource("CircleShape2D_4flbx")
 
 [node name="Speed" parent="." instance=ExtResource("3_686vu")]
 MovementSpeed = 400
+
+[node name="Dash" parent="." instance=ExtResource("4_hss88")]
