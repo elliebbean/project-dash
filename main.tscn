@@ -12,6 +12,8 @@ enemyManager = NodePath("EnemyManager")
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(323, 255)
 
+[node name="Enemy" parent="." instance_placeholder="res://scenes/characters/enemy/enemy.tscn"]
+
 [node name="EnemyManager" type="Node" parent="."]
 script = ExtResource("3_h2yge")
 
