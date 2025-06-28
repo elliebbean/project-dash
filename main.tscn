@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cwqnmiq2shng8"]
+[gd_scene load_steps=14 format=4 uid="uid://cwqnmiq2shng8"]
 
 [ext_resource type="Script" uid="uid://d4bwdry08cdxw" path="res://Main.cs" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dm7lj7pbcwgpb" path="res://scenes/characters/player/player.tscn" id="1_ig7tw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://7akrneagowt3" path="res://scenes/ui/GameOverScreen.tscn" id="6_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bj5p2vxrg2s3q" path="res://scenes/ui/TitleScreen.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://cdd5n6bdlpbua" path="res://scenes/ui/HUD.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://e0fj3mxl1wdd" path="res://scenes/ui/PauseScreen.tscn" id="7_efxa6"]
 [ext_resource type="Script" uid="uid://duqusa7rfwqgo" path="res://scripts/Hud.cs" id="9_kek77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
@@ -49,6 +50,9 @@ script = ExtResource("5_lquwl")
 [node name="HUD" parent="UI" instance=ExtResource("7_5vw27")]
 visible = false
 script = ExtResource("9_kek77")
+
+[node name="PauseScreen" parent="UI" instance=ExtResource("7_efxa6")]
+visible = false
 
 [node name="GameOverScreen" parent="UI" instance=ExtResource("6_5vw27")]
 visible = false

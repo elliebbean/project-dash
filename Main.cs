@@ -1,8 +1,16 @@
 using Godot;
 using System;
+using System.Runtime.CompilerServices;
 
 public partial class Main : Node
 {
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionJustPressed("pause"))
+		{
+			GetTree().Paused = true;
+		}
+	}
 	public void GameOver()
 	{
 		GetNode<Timer>("EnemyManager/EnemyTimer").Stop();
