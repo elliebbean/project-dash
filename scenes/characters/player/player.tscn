@@ -87,10 +87,9 @@ script = ExtResource("1_dovo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_onrkg")
-animation = &"up_right"
+animation = &"down_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4flbx")
 
 [node name="Speed" parent="." instance=ExtResource("3_686vu")]
-MovementSpeed = 400
