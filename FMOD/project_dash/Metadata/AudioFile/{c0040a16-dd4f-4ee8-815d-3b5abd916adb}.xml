@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{c0040a16-dd4f-4ee8-815d-3b5abd916adb}">
+		<property name="assetPath">
+			<value>char/char_enemy_death_fizzle_05.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.875</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{191a8cf1-c377-4496-bd68-f5acaa3a0992}</destination>
+		</relationship>
+	</object>
+</objects>

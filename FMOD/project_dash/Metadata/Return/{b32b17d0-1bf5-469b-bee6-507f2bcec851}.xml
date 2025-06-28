@@ -5,7 +5,7 @@
 			<value>2</value>
 		</property>
 		<property name="name">
-			<value>Reverb</value>
+			<value>playerverb</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{d9b7e127-f175-45df-8ce7-28f20d6fb57f}</destination>
@@ -25,6 +25,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{64a6b3c1-77a3-412e-aa11-b84b7569104b}" />
 	<object class="SFXReverbEffect" id="{16166a44-2302-41cc-84bc-e22fb65367ee}">
+		<property name="decayTime">
+			<value>1200</value>
+		</property>
 		<property name="wetLevel">
 			<value>0</value>
 		</property>
