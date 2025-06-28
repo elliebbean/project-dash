@@ -10,9 +10,17 @@ public partial class Hud : CanvasLayer
 	{
 		GetNode<Button>("StartButton").Hide();
 		GetNode<Label>("Title").Hide();
+		GetNode<Label>("GameOverLabel").Hide();
+		GetNode<Button>("RetryButton").Hide();
 		GetNode<Label>("ScoreLabel").Show();
 		GetNode<Label>("MultiplierLabel").Show();
 		EmitSignal(SignalName.StartGame);
+	}
+	
+	public void GameOver()
+	{
+		GetNode<Label>("GameOverLabel").Show();
+		GetNode<Button>("RetryButton").Show();
 	}
 	
 	public void UpdateScore(int score)

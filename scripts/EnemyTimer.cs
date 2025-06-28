@@ -13,8 +13,6 @@ public partial class EnemyTimer : Timer
 		if (Random.Shared.Next(10) == 0)
 		{
 			GetParent<EnemyManager>().AddEnemy();
-			GetNode<Main>("/root/Main").ModifyScore(10);
-			GetNode<Main>("/root/Main").ModifyMultiplier(1);
 		}
 		
 	}

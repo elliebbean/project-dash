@@ -7,6 +7,7 @@ public partial class EnemyManager : Node
 	{
 		var enemyScene = ResourceLoader.Load<PackedScene>("res://scenes/Characters/enemy/enemy.tscn");
 		var enemy = enemyScene.Instantiate<Enemy>();
+		enemy.AddToGroup("enemies");
 		enemy.Position = GetEnemySpawnPosition();
 		AddChild(enemy);
 	}
