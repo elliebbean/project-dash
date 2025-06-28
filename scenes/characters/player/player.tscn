@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm7lj7pbcwgpb"]
+[gd_scene load_steps=6 format=3 uid="uid://dm7lj7pbcwgpb"]
 
 [ext_resource type="Texture2D" uid="uid://du42gxcrqmn7g" path="res://art/placeholder/placeholder.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://b6ahut6ffcaf" path="res://scenes/player/Player.cs" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://b6ahut6ffcaf" path="res://scenes/characters/player/Player.cs" id="1_dovo2"]
+[ext_resource type="PackedScene" uid="uid://bcb3squi4rufo" path="res://scenes/characters/properties/speed/Speed.tscn" id="3_686vu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -25,3 +26,6 @@ sprite_frames = SubResource("SpriteFrames_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4flbx")
+
+[node name="Speed" parent="." instance=ExtResource("3_686vu")]
+MovementSpeed = 400
