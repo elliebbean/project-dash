@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c371gor1mpnme"]
+[gd_scene load_steps=6 format=3 uid="uid://c371gor1mpnme"]
 
 [ext_resource type="Texture2D" uid="uid://bu08xtvos51s" path="res://scenes/characters/enemy/enemy.png" id="1_fxfoy"]
 [ext_resource type="Script" uid="uid://ds6476hli7lcd" path="res://scenes/characters/enemy/Enemy.cs" id="1_n7lqi"]
+[ext_resource type="PackedScene" uid="uid://bcb3squi4rufo" path="res://scenes/characters/properties/speed/Speed.tscn" id="3_uqam8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fxfoy"]
 animations = [{
@@ -24,3 +25,5 @@ sprite_frames = SubResource("SpriteFrames_fxfoy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_n7lqi")
+
+[node name="Speed" parent="." instance=ExtResource("3_uqam8")]

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Enemy : CharacterBase
+public partial class Enemy : CharacterBody2D
 {
     public override void _Ready()
     {
@@ -12,7 +12,7 @@ public partial class Enemy : CharacterBase
 	{
 		
 		var target = GetParent().GetParent().GetNode<Player>("Player").GlobalPosition; //This needs to be the player character
-		Velocity = (target - GlobalPosition).Normalized() * Speed;
+		Velocity = (target - GlobalPosition).Normalized() * GetNode<Speed>("Speed").MovementSpeed;
 
 		MoveAndSlide();
 
