@@ -1,23 +1,90 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwqnmiq2shng8"]
+[gd_scene load_steps=6 format=3 uid="uid://cwqnmiq2shng8"]
 
 [ext_resource type="Script" uid="uid://d4bwdry08cdxw" path="res://Main.cs" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dm7lj7pbcwgpb" path="res://scenes/characters/player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://d31eth7cmt5g6" path="res://scripts/EnemyManager.cs" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://5l3gom85ihay" path="res://scripts/EnemyTimer.cs" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://csjaeauvfscht" path="res://Hud.cs" id="5_lquwl"]
 
-[node name="Main" type="Node" node_paths=PackedStringArray("enemyManager")]
+[node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
-enemyManager = NodePath("EnemyManager")
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(323, 255)
 
 [node name="Enemy" parent="." instance_placeholder="res://scenes/characters/enemy/enemy.tscn"]
 
 [node name="EnemyManager" type="Node" parent="."]
 script = ExtResource("3_h2yge")
 
-[node name="Timer" type="Timer" parent="EnemyManager"]
+[node name="EnemyTimer" type="Timer" parent="EnemyManager"]
 wait_time = 0.05
-autostart = true
 script = ExtResource("4_1bvp3")
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(323, 225)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("5_lquwl")
+
+[node name="StartButton" type="Button" parent="HUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -180.0
+offset_right = 48.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start Game"
+
+[node name="Title" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -19.5
+offset_right = 85.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"HeaderLarge"
+text = "Project Dash"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MultiplierLabel" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -12.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "1x"
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = -7.0
+grow_vertical = 0
+text = "0"
+
+[connection signal="MultiplierChanged" from="." to="HUD" method="UpdateMultiplier"]
+[connection signal="ScoreChanged" from="." to="HUD" method="UpdateScore"]
+[connection signal="StartGame" from="HUD" to="." method="NewGame"]
+[connection signal="pressed" from="HUD/StartButton" to="HUD" method="OnStartButtonPressed"]
