@@ -72,6 +72,8 @@ public partial class Player : CharacterBody2D
 
   public override void _PhysicsProcess(double delta)
   {
+	var fmodBridge = GD.Load<GDScript>("res://scripts/fmod.gd");
+	var fmodBridgeNode = (GodotObject)fmodBridge.New();
 	var mousePosition = GetViewport().GetMousePosition();
 	Velocity = (mousePosition - GlobalPosition).Normalized() * GetNode<Speed>("Speed").MovementSpeed;
 
@@ -82,7 +84,8 @@ public partial class Player : CharacterBody2D
 		var collision = GetSlideCollision(i);
 		if (((Node)collision.GetCollider()).IsInGroup("enemies"))
 		{
-			Die();
+			Die();	
+			fmodBridgeNode.Call("_on_player_died");
 		}
 	}
   }

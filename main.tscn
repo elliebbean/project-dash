@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cwqnmiq2shng8"]
+[gd_scene load_steps=15 format=4 uid="uid://cwqnmiq2shng8"]
 
 [ext_resource type="Script" uid="uid://d4bwdry08cdxw" path="res://Main.cs" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dm7lj7pbcwgpb" path="res://scenes/characters/player/player.tscn" id="1_ig7tw"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cdd5n6bdlpbua" path="res://scenes/ui/HUD.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://e0fj3mxl1wdd" path="res://scenes/ui/PauseScreen.tscn" id="7_efxa6"]
 [ext_resource type="Script" uid="uid://duqusa7rfwqgo" path="res://scripts/Hud.cs" id="9_kek77"]
+[ext_resource type="Script" uid="uid://cbmc8ewk6whra" path="res://scripts/fmod.gd" id="12_dg77c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
 texture = ExtResource("2_7mycd")
@@ -58,6 +59,12 @@ visible = false
 visible = false
 
 [node name="TitleScreen" parent="UI" instance=ExtResource("6_272bh")]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://banks/Desktop/Master.bank", "res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/test.bank"]
+
+[node name="fmod" type="Node" parent="."]
+script = ExtResource("12_dg77c")
 
 [connection signal="MultiplierChanged" from="Player" to="UI/HUD" method="UpdateMultiplier"]
 [connection signal="PlayerDied" from="Player" to="." method="GameOver"]
