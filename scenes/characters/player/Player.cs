@@ -90,13 +90,12 @@ public partial class Player : CharacterBody2D
 		Dash dashNode = null;
 		if ((dashNode = GetNodeOrNull<Dash>("Dash")) != null)
 		{
-			if (dashNode.IsDashing)
+			if (!dashNode.IsDashing)
 			{
-				return;
+				var mousePosition = GetViewport().GetMousePosition();
+				Velocity = (mousePosition - GlobalPosition).Normalized() * GetNode<Speed>("Speed").MovementSpeed;
 			}
 		}
-		var mousePosition = GetViewport().GetMousePosition();
-		Velocity = (mousePosition - GlobalPosition).Normalized() * GetNode<Speed>("Speed").MovementSpeed;
 
 		MoveAndSlide();
 

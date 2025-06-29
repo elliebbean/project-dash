@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cdd5n6bdlpbua" path="res://scenes/ui/HUD.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://e0fj3mxl1wdd" path="res://scenes/ui/PauseScreen.tscn" id="7_efxa6"]
 [ext_resource type="Script" uid="uid://duqusa7rfwqgo" path="res://scripts/Hud.cs" id="9_kek77"]
-[ext_resource type="Script" uid="uid://cbmc8ewk6whra" path="res://scripts/fmod.gd" id="12_dg77c"]
+[ext_resource type="Script" path="res://scripts/fmod.gd" id="12_dg77c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
 texture = ExtResource("2_7mycd")
